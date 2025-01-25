@@ -52,3 +52,7 @@ A more `traditional machine learning` classification approach, such as a `Random
 By comparing these tree-based models against the neural network, Alphabet Soup might gain higher accuracy or more interpretable insights into which features drive funding success.
 Overall, `combining domain knowledge` and `further hyperparameter tuning` could push performance beyond the current threshold while ensuring that the model remains practical and interpretable for Alphabet Soup’s decision-making process.
 
+## Credit
+This repository is for Soheil Dabooyeh's `deep-learning-challenge` for Monash Data Analytics Bootcamp. All code written by Soheil Dabooyeh.
+
+
