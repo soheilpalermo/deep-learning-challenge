@@ -1,24 +1,23 @@
 # Alphabet Soup Deep Learning Model Report
 ## 1. Overview of the Analysis
-Alphabet Soup, a nonprofit foundation, wants to predict which funding applicants are most likely to succeed if granted funding. To solve this, we built a binary classification deep learning model that uses historical application data to determine the likelihood of an application’s success. By accurately identifying high-potential applicants, Alphabet Soup can optimize its use of resources and better serve organizations.
+Alphabet Soup, a nonprofit foundation, wants `to predict which funding applicants are most likely to succeed` if granted funding. To solve this, we built a `binary classification` deep learning model that uses historical application data to determine the likelihood of an application’s success. By accurately identifying high-potential applicants, Alphabet Soup can optimise its use of resources and better serve organisations.
 ## 2. Results
 ### 2.1 Data Preprocessing
 - target Variable:
-  - IS_SUCCESSFUL – a binary indicator (0 or 1) of whether the funding resulted in a successful outcome.
+  - `IS_SUCCESSFUL` – a binary indicator (0 or 1) of whether the funding resulted in a successful outcome.
 - Feature Variables:
-  - APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, ASK_AMT (after they were appropriately encoded and scaled).
+  - `APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, ASK_AMT` (after they were appropriately encoded and scaled).
   - These features capture diverse aspects of each organization’s profile, from the requested funding amount to the organizational structure.
 - Removed Variables:
-  - EIN and NAME – These were purely identification columns that do not provide predictive power and might add unnecessary noise to the model.
+  - `EIN and NAME` – These were purely identification columns that do not provide predictive power and might add unnecessary noise to the model.
 
 ## 2.2 Compiling, Training, and Evaluating the Model
 - ### Model Architecture:
 
-1- Input Layer: Number of input features after one-hot encoding (e.g., ~40–100 depending on the data).
-2- Hidden Layers:
-Layer 1: 80 neurons, ReLU activation
-Layer 2: 30 neurons, ReLU activation
-(Some attempts might have had three or more hidden layers with more/less neurons.)
+1- `Input Layer:` Number of input features after one-hot encoding (e.g., ~40–100 depending on the data).
+2- `Hidden Layers:`
+`Layer 1:` 80 neurons, ReLU activation
+`Layer 2:` 30 neurons, ReLU activation
 Output Layer: 1 neuron, Sigmoid activation (for binary classification)
 
 ### Why These Hyperparameters?
@@ -28,14 +27,14 @@ Output Layer: 1 neuron, Sigmoid activation (for binary classification)
 - 
 ### Model Performance:
 - In the baseline model, the training was run for 100 epochs, achieving an accuracy of around 72%–73% on the test data.
-- Optimized Model Attempts:
+- Optimised Model Attempts:
 1- Increased the number of neurons in the hidden layers.
 2- Added a third hidden layer.
 3- Experimented with different activation functions (e.g., tanh) and altered the learning rate.
   
 ### Best Accuracy Achieved: ~75%.
 #### Steps Taken to Increase Performance:
-- Dropped or recategorized more columns/rare categories (e.g., merging low-frequency APPLICATION_TYPE or CLASSIFICATION values into “Other”).
+- Dropped or recategorised more columns/rare categories (e.g., merging low-frequency APPLICATION_TYPE or CLASSIFICATION values into “Other”).
 - Adjusted hyperparameters (learning rate, number of epochs, number of neurons, etc.).
 - Changed activation functions from relu to tanh in some layers.
 - Increased or decreased the number of epochs to find a sweet spot without overfitting.
